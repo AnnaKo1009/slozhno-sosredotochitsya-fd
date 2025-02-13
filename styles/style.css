@@ -7,7 +7,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  font-family: var(--main-font);
+  font-family: var(--main-font), monospace;
   font-size: var(--text-size);
 
 }
@@ -27,7 +27,7 @@
 }
 
 .header__theme-menu-button {
-  font-family: var(--main-font);
+  font-family: var(--main-font), monospace;
   color: var(--section-font-color);
   text-transform: lowercase;
   font-size: var(--text-size);
@@ -36,6 +36,7 @@
   padding: 1.5px 13px;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .header__theme-menu-list {
@@ -61,15 +62,22 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  text-decoration: underline;
+  border-block-end: 1px solid currentColor; 
 }
 
 .title {
   color: var(--title-color);
-  text-shadow: 4px 4px 0px var(--accent-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.83;
   font-weight: 700;
+}
+
+.header-title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.footer-title {
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .content {
@@ -128,7 +136,7 @@
 }
 
 .accent-link:hover {
-  text-decoration: underline;
+  border-block-end: 1px solid currentColor; 
 }
 
 .accent-link:focus {
@@ -167,6 +175,7 @@
   justify-content: center;
   align-items: center;
   block-size: 100vh;
+  min-height: 668px;
 }
 
 .decorated-elements {
@@ -221,7 +230,7 @@
   block-size: 9px;
   border-radius: 50%;
   background: var(--accent-color);
-  box-shadow: 0 0 2px 2px var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
 @media (width >= 768px) {
@@ -253,8 +262,8 @@
   }
   
   .what-section-title {
-    inline-size: 236px;
-    block-size: 70px;
+    max-width: 236px;
+    width: 100%;
   }
 
   .how-section {
@@ -294,8 +303,8 @@
 
 @media (width >= 1024px) {
   .what-section-title {
-    inline-size: 315px;
-    block-size: 47px;
+    max-width: 315px;
+    width: 100%;
   }
 
   .what-section-list {
